@@ -4,20 +4,38 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f7f7f7;
+    background-color: #aaa;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .container {
     background-color: #ccc;
     width: 300px;
-    height: 150px;
+    height: 250px;
     display: flex;
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 1rem;
 }
 .previous-logs {
-    background-color: #aaa;
-    width: 270px;
-    height: 30px;
+    background-color: #eee;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16pt;
+    width: 120px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.display {
+    font-size: 16pt;
+}
+.start-timer-btn {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 20pt;
 }
