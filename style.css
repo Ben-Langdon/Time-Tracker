@@ -8,16 +8,16 @@ body {
 }
 .container {
     background-color: #ccc;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
 }
 .previous-logs {
     background-color: #aaa;
-    width: 370px;
-    height: 230px;
+    width: 270px;
+    height: 30px;
 }
