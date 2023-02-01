@@ -8,13 +8,14 @@ btn.addEventListener('click', startTimer)
 
 let startTime;
 let loggedTime;
+let updateInterval
 
 function startTimer() {
     startTime = new Date()
-    setInterval(update, 1000)
+    updateInterval = setInterval(update, 1000)
     btn.innerText = 'Pause'
     btn.removeEventListener('click', startTimer)
-    btn.addEventListener('click', stopTimer)
+    btn.addEventListener('click', pauseTimer)
 }
 
 
@@ -23,8 +24,13 @@ function update() {
     display.innerText = `hours: ${loggedTime.toString().slice(0,6)}`
 }
 
-function stopTimer() {
-    btn.innerText = 'Start Timer'
-    btn.removeEventListener('click', stopTimer)
-    btn.addEventListener('click', startTimer)
+function pauseTimer() {
+    btn.innerText = 'Resume'
+    clearInterval(updateInterval)
+    btn.removeEventListener('click', pauseTimer)
+    btn.addEventListener('click', resumeTimer)
+}
+
+function resumeTimer() {
+    alert('working')
 }
