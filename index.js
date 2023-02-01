@@ -6,21 +6,21 @@ const display = document.querySelector('.display')
 btn.addEventListener('click', startTimer)
 
 
-let timeNow;
+let startTime;
 let loggedTime;
 
 function startTimer() {
-    timeNow = new Date()
+    startTime = new Date()
     setInterval(update, 1000)
-    btn.innerText = 'Stop Timer'
+    btn.innerText = 'Pause'
     btn.removeEventListener('click', startTimer)
     btn.addEventListener('click', stopTimer)
 }
 
 
 function update() {
-    loggedTime = (new Date() - timeNow) / 1000
-    display.innerText = `${loggedTime} Seconds`
+    loggedTime = (new Date() - startTime) / 3600000
+    display.innerText = `hours: ${loggedTime.toString().slice(0,6)}`
 }
 
 function stopTimer() {
