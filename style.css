@@ -16,3 +16,8 @@ body {
     flex-direction: column;
     gap: 3rem;
 }
+.previous-logs {
+    background-color: #aaa;
+    width: 370px;
+    height: 230px;
+}
