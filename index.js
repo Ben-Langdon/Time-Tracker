@@ -16,12 +16,15 @@ let loggedTimeTotal = 0;
 
 function startTimer() {
     document.removeEventListener('keyup', spaceBarStart)
+    btn.removeEventListener('click', startTimer)
     document.addEventListener('keyup', spaceBarStop)
+    btn.addEventListener('click', stopTimer)
+
     startTime = new Date()
     updateInterval = setInterval(update, 1000)
+    timeSinceStart = (new Date() - startTime) / 3600000
+
     btn.innerText = 'Stop / Log'
-    btn.removeEventListener('click', startTimer)
-    btn.addEventListener('click', stopTimer)
     body.style.backgroundColor = 'rgb(0,100,0)'
 }
 
@@ -44,13 +47,17 @@ function update() {
 
 function stopTimer() {
     document.removeEventListener('keyup', spaceBarStop)
+    btn.removeEventListener('click', stopTimer)
     document.addEventListener('keyup', spaceBarStart)
-    display.innerText = `Current Hours: 0.0000`
-    btn.innerText = 'Start Timer'
+    btn.addEventListener('click', startTimer)
+
     clearInterval(updateInterval)
     btn.removeEventListener('click', stopTimer)
     btn.addEventListener('click', startTimer)
     loggedTimeTotal += timeSinceStart
+
     logSection.innerText = loggedTimeTotal.toString().slice(0,6)
     body.style.backgroundColor = 'rgb(100,0,0)'
+    display.innerText = `Current Hours: 0.0000`
+    btn.innerText = 'Start Timer'
 }
