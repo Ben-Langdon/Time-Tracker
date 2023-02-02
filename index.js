@@ -57,7 +57,7 @@ function stopTimer() {
     loggedTimeTotal += timeSinceStart
 
     logSection.innerText = loggedTimeTotal.toString().slice(0,6)
-    body.style.backgroundColor = 'rgb(100,0,0)'
+    body.style.backgroundColor = '#aaaaaa'
     display.innerText = `Current Hours: 0.0000`
     btn.innerText = 'Start Timer'
 }
