@@ -34,8 +34,16 @@ body {
     font-size: 16pt;
 }
 .start-timer-btn {
-    padding: 1rem 2rem;
+    width: 220px;
+    height: 65px;
     border-radius: 5px;
     border: none;
     font-size: 20pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+.start-timer-btn::selection{
+    background-color: transparent;
 }
